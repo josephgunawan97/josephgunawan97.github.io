@@ -2,7 +2,9 @@
   <div :style="cssProps">
     <v-row no-gutters>
       <v-col cols="12"  md="6" lg=6 sm="12"  class="py-0 my-0 mx-0 px-0">
+      <transition name="slide">
         <v-img
+          v-if="show"
           id="profile1"
           :src="require('../assets/profile1.jpg')"
           aspect-ratio="0.8"
@@ -21,14 +23,15 @@
             </v-row>
           </template>
         </v-img>
+      </transition>
       </v-col>
-      <v-col cols="12" md="6" lg=6 sm="12" class="py-0 my-0 mx-0 px-0" align-self="center">
+      <v-col cols="12" md="6" lg=6 sm="12" class="py-0 my-0 mx-0 pr-3" align-self="center">
         <v-container class="text-right">
-          <span class="display-4 font-weight-bold">WELCOME</span><br/>
-          <span class="display-3">My name is <span class="primary--text font-weight-normal">Joseph</span></span> <br/>
-          <span class="display-1 font-weight-light">
-            You will know me as
-            <vue-typer
+          <div class="text-4 primary--text font-weight-bold">WELCOME</div>
+          <span class="text-3">My name is <span class="primary--text font-weight-normal">Joseph</span></span> <br/>
+          <span class="text-2 my-0 py-0 font-weight-light">
+            You will know me as 
+            <vue-typer  
               class="font-weight-medium"
               :text='["Programmer","Product Manager","Idea Generator", "Consultant"]'
               :repeat='Infinity'
@@ -43,11 +46,11 @@
               caret-animation='blink'
             ></vue-typer>
           </span>
-          <v-container class="my-3">
-            <v-btn x-large outlined>
+          <div class="text-2">
+            <v-btn color="secondary" x-large dark @click="clickHandle('about')">
               About Me
             </v-btn>
-          </v-container>
+          </div>
         </v-container>
       </v-col>
     </v-row>
@@ -59,6 +62,7 @@
     name: 'HelloWorld',
 
     data: () => ({
+      show: false,
       cssProps: {
         'background-image': `url(${require('@/assets/bg1.jpg')})`,
         'background-size': `100%`,
@@ -66,6 +70,14 @@
         'background-repeat': `repeat-y`
       }
     }),
+    mounted() {
+      this.show = true
+    },
+    methods: {
+      clickHandle (name) {
+        this.$emit('on-click', name)
+      }
+    }
   }
 </script>
 
@@ -74,4 +86,15 @@
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
 }
+.slide-leave-active,
+.slide-enter-active {
+  transition: 1s;
+}
+.slide-enter {
+  transform: translate(-100%, 0);
+}
+.slide-leave-to {
+  transform: translate(100%, 0);
+}
+
 </style>
