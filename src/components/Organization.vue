@@ -6,9 +6,9 @@
       </div>
       <v-row>
         <v-col cols="12" lg="6" md="12" sm="12" xl="6" class="pr-3">
-          <div class="border container-image  primary pa-5 rounded-lg">
+          <div class="border container-image  primary pa-5 rounded-lg" @click="clickHandle('career')">
             <v-img :src="require('@/assets/work.png')" max-height="250" contain class="image-custom"/>
-            <div class="overlay secondary rounded-lg" @click="clickHandle('career')" >
+            <div class="overlay secondary rounded-lg">
               <div class="text white--text">My Career</div>
             </div>
           </div>
@@ -17,31 +17,31 @@
           </v-btn> -->
         </v-col>
         <v-col cols="12" lg="6" md="12" sm="12" xl="6"  class="pr-3">
-          <div class="border container-image primary pa-5 rounded-lg">
+          <div class="border container-image primary pa-5 rounded-lg"  @click="clickHandle('project')">
             <v-img :src="require('@/assets/project.png')" max-height="250" contain class="image-custom"/>
-            <div class="overlay secondary rounded-lg" @click="clickHandle('project')">
+            <div class="overlay secondary rounded-lg">
               <div class="text white--text">Project by Me</div>
             </div>
           </div>
         </v-col>
         <v-col cols="12" lg="6" md="12" sm="12" xl="6"  class="pr-3">
-          <div class="border container-image primary pa-5 rounded-lg"  >
+          <div class="border container-image primary pa-5 rounded-lg"  @click="clickHandle('organization')">
             <v-img :src="require('@/assets/organization.png')" max-height="250" contain class="image-custom"/>
-            <div class="overlay secondary rounded-lg" @click="clickHandle('organization')">
+            <div class="overlay secondary rounded-lg">
               <div class="text white--text">My Organization</div>
             </div>
           </div>
         </v-col>
         <v-col cols="12" lg="6" md="12" sm="12" xl="6" class="pr-3">
-          <div class="border container-image primary pa-5 rounded-lg" >
+          <div class="border container-image primary pa-5 rounded-lg"  @click="clickHandle('contact')">
             <v-img :src="require('@/assets/contact.png')" max-height="250" contain class="image-custom"/>
-            <div class="overlay secondary rounded-lg" @click="clickHandle('contact')">
+            <div class="overlay secondary rounded-lg">
               <div class="text white--text">Contact Me</div>
             </div>
           </div>
         </v-col>
       </v-row>
-      <v-btn x-large outlined color="primary" class="mt-3" @click="clickHandle('welcome')">
+      <v-btn outlined color="primary" @click="clickHandle('welcome')">
         Back To Home
       </v-btn>
     </v-container>
@@ -50,15 +50,12 @@
 
 <script>
   export default {
-    name: 'About',
+    name: 'HelloWorld',
 
     data: () => ({
       show: false,
       cssProps: {
-        'min-height': '95vh',
-        'background-size': `100%`,
-        'background-position': `center`,
-        'background-repeat': `repeat-y`
+        'height': '95vh'
       }
     }),
     mounted() {

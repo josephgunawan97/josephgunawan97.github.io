@@ -2,6 +2,7 @@
   <div class="home">
     <welcome ref="welcome" class="fl-welcome" @on-click="scrollMeTo"/>
     <about ref="about" id="about" class="fl-about" @on-click="scrollMeTo"/>
+    <career ref="career" id="career" class="fl-career" @on-click="scrollMeTo"/>
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 // @ is an alias to /src
 import Welcome from '@/components/Welcome.vue'
 import About from '@/components/About.vue'
+import Career from '@/components/Career.vue'
 
 export default {
   name: 'Home',
   components: {
     Welcome,
-    About
+    About,
+    Career
   },
   data () {
     return {
@@ -30,7 +33,8 @@ export default {
   },
   methods: {
     scrollMeTo (refName) {
-      // console.log(refName)
+      // var fullpath = this.$route.path +  this.$route.hash
+
       var element = document.getElementById(refName);
       if (element) {
         var top = element.offsetTop - 48;
@@ -41,6 +45,15 @@ export default {
           behavior: 'smooth'
         });
         window.history.replaceState( {} , '', `#${refName}` )
+      }
+      else {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+
+        window.history.pushState("", document.title, window.location.pathname + window.location.search);
       }
 
       // // var element = this.$refs[refName];

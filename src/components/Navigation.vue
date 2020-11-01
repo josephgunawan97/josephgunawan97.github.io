@@ -1,8 +1,7 @@
 <template>
   <div>
     <v-app-bar
-      class="hidden-sm-and-down"
-      :key="fullpath"
+      class="hidden-sm-and-down show-md-and-up"
       dense
       width="100%"
       :color="bg"
@@ -20,19 +19,16 @@
             :key="index">{{item.text}}
           </v-btn>
         </template>
-        <!-- test123 -->
-        <!-- {{bg}} -->
     </v-app-bar>
     <v-app-bar
-    class="hidden-md-and-up"
-    :key="fullpath"
+    class="show-sm-and-down hidden-md-and-up "
     dense
     width="100%"
     fixed
     color="primary"
-    flat
+    text
     >
-      <v-menu class="hidden-md-and-up">
+      <v-menu>
         <template v-slot:activator="{ on }">
           <v-spacer/>
           <v-btn text small v-on="on" dark>
@@ -40,17 +36,12 @@
           </v-btn>
         </template>
 
-        <v-list>
+        <v-list >
           <v-list-item v-for="(item, index) in menuOption" :key="index">
             <v-list-item-title class="primary--text" @click="goTo(item.id)">{{item.text}}</v-list-item-title>
           </v-list-item>
-          <v-list-item v-if="activeUser" to="/">
-            <v-list-item-title>All Posts</v-list-item-title>
-          </v-list-item>
         </v-list>
       </v-menu>
-      <!-- test123 -->
-      <!-- {{bg}} -->
   </v-app-bar>
   </div>
   
@@ -74,7 +65,7 @@ export default {
         { text: 'Project', id: '/home#project' },
         { text: 'Organization', id: '/home#organization' },
         { text: 'Contact', id: '/home#contact' },
-      ]
+      ],
     }
   },
   created () {
@@ -85,13 +76,13 @@ export default {
   destroyed () {
     window.removeEventListener('scroll', this.changeColor);
   },
-  watch:{
-    $route (to, from){
-      console.log(from)
-      this.fullpath = to.path +  to.hash
-      this.reload += 1
-    }
-  },
+  // watch:{
+  //   $route (to, from){
+  //     console.log(from)
+  //     this.fullpath = to.path +  to.hash
+  //     this.reload += 1
+  //   }
+  // },
   methods: {
     goTo (item) {
       if (item !== '/home') {

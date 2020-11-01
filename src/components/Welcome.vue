@@ -30,12 +30,12 @@
           <div class="text-4 primary--text font-weight-bold">WELCOME</div>
           <span class="text-3">My name is <span class="primary--text font-weight-normal">Joseph</span></span> <br/>
           <span class="text-2 my-0 py-0 font-weight-light">
-            You will know me as 
+            You will know me as a(n)
             <vue-typer  
               class="font-weight-medium"
-              :text='["Programmer","Product Manager","Idea Generator", "Consultant"]'
+              :text='["Programmer","Product Manager","Team Leader","Idea Generator", "Consultant", "Friend", "Partner"]'
               :repeat='Infinity'
-              :shuffle='true'
+              :shuffle='false'
               initial-action='typing'
               :pre-type-delay='70'
               :type-delay='70'
