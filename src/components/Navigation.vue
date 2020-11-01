@@ -5,7 +5,9 @@
     :color="bg"
     :dark="dark"
     :elevation="elevate"
-    absolute>
+    :fixed="fixed"
+    :absolute="absolute"
+    >
     <v-spacer/>
     <v-toolbar-title>
       <!-- test123 -->
@@ -23,6 +25,8 @@ export default {
       bg: 'transparent',
       elevate: 0,
       dark: false,
+      fixed: false,
+      absolute: true,
     }
   },
   created () {
@@ -38,13 +42,17 @@ export default {
       if (
         scrollPos > 100
       ) {
-        this.bg = 'primary';
+        this.bg = 'white';
         this.elevate = 5;
-        this.dark = true;
+        // this.dark = true;
+        this.fixed = true;
+        this.absolute = false;
       } else {
         this.bg = 'transparent';
         this.elevate = 0;
-        this.dark = false;
+        // this.dark = false;
+        this.fixed = false;
+        this.absolute = true;
       }
     },
   },

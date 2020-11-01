@@ -1,19 +1,32 @@
 <template>
   <div :style="cssProps">
     <v-row no-gutters>
-      <v-col cols="6" class="py-0 my-0 mx-0 px-0">
+      <v-col cols="12"  md="6" lg=6 sm="12"  class="py-0 my-0 mx-0 px-0">
         <v-img
           id="profile1"
           :src="require('../assets/profile1.jpg')"
           aspect-ratio="0.8"
           max-height="100vh"
-        />
+        >
+          <template v-slot:placeholder>
+            <v-row
+              class="fill-height ma-0"
+              align="center"
+              justify="center"
+            >
+              <v-progress-circular
+                indeterminate
+                color="grey lighten-5"
+              ></v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
       </v-col>
-      <v-col cols="6" class="py-0 my-0 mx-0 px-0" align-self="center">
+      <v-col cols="12" md="6" lg=6 sm="12" class="py-0 my-0 mx-0 px-0" align-self="center">
         <v-container class="text-right">
           <span class="display-4 font-weight-bold">WELCOME</span><br/>
           <span class="display-3">My name is <span class="primary--text font-weight-normal">Joseph</span></span> <br/>
-          <span class="display-2 font-weight-light">
+          <span class="display-1 font-weight-light">
             You will know me as
             <vue-typer
               class="font-weight-medium"
@@ -49,7 +62,8 @@
       cssProps: {
         'background-image': `url(${require('@/assets/bg1.jpg')})`,
         'background-size': `100%`,
-        'background-position': `center`
+        'background-position': `center`,
+        'background-repeat': `repeat-y`
       }
     }),
   }
