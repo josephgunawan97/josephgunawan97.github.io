@@ -19,6 +19,7 @@
             :key="index">{{item.text}}
           </v-btn>
         </template>
+          <v-img icon contain :src="require('@/assets/logo.png')" max-width="25px"/>
     </v-app-bar>
     <v-app-bar
     class="show-sm-and-down hidden-md-and-up "
@@ -28,9 +29,12 @@
     color="primary"
     text
     >
+      <v-toolbar-title>
+        <v-img icon :src="require('@/assets/logo2.png')" max-width="25px"/>
+      </v-toolbar-title>
+      <v-spacer/>
       <v-menu>
         <template v-slot:activator="{ on }">
-          <v-spacer/>
           <v-btn text small v-on="on" dark>
             Menu
           </v-btn>
@@ -39,6 +43,8 @@
         <v-list >
           <v-list-item v-for="(item, index) in menuOption" :key="index">
             <v-list-item-title class="primary--text" @click="goTo(item.id)">{{item.text}}</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
           </v-list-item>
         </v-list>
       </v-menu>
