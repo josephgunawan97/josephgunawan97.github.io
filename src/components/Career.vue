@@ -66,7 +66,7 @@
           </v-carousel>
         </v-col>
       </v-row>
-      <v-btn outlined color="primary" @click="clickHandle('about')">
+      <v-btn x-large outlined color="primary" @click="clickHandle('about')">
         Back To About 
       </v-btn>
     </v-container>
@@ -105,7 +105,7 @@
             ]
           ],
           image: require('@/assets/klikdaily.jpg'),
-          color: 'info',
+          color: 'primary',
           web: 'https://www.klikdaily.com'
         },
         // {

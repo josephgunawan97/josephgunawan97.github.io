@@ -49,7 +49,7 @@ export default {
     font-size: 4vw !important;
   }
   .text-1 {
-    font-size: 2vw !important;
+    font-size: 3vw !important;
   }
 }
 </style>

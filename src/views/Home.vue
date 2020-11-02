@@ -3,6 +3,7 @@
     <welcome ref="welcome" class="fl-welcome" @on-click="scrollMeTo"/>
     <about ref="about" id="about" class="fl-about" @on-click="scrollMeTo"/>
     <career ref="career" id="career" class="fl-career" @on-click="scrollMeTo"/>
+    <contact ref="contact" id="contact" class="fl-contact" @on-click="scrollMeTo"/>
   </div>
 </template>
 
@@ -11,13 +12,15 @@
 import Welcome from '@/components/Welcome.vue'
 import About from '@/components/About.vue'
 import Career from '@/components/Career.vue'
+import Contact from '@/components/Contact.vue'
 
 export default {
   name: 'Home',
   components: {
     Welcome,
     About,
-    Career
+    Career,
+    Contact,
   },
   data () {
     return {

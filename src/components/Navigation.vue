@@ -59,12 +59,12 @@ export default {
       absolute: true,
       fullpath: null,
       menuOption: [
-        { text: 'Home', id: '/home' },
-        { text: 'About', id: '/home#about' },
-        { text: 'Career', id: '/home#career' },
-        { text: 'Project', id: '/home#project' },
-        { text: 'Organization', id: '/home#organization' },
-        { text: 'Contact', id: '/home#contact' },
+        { text: 'Home', id: '/' },
+        { text: 'About', id: '/#about' },
+        { text: 'Career', id: '/#career' },
+        { text: 'Project', id: '/#project' },
+        { text: 'Organization', id: '/#organization' },
+        { text: 'Contact', id: '/#contact' },
       ],
     }
   },
@@ -85,11 +85,11 @@ export default {
   // },
   methods: {
     goTo (item) {
-      if (item !== '/home') {
+      if (item !== '/') {
         this.$router.push(item)
       } else {
-        this.$router.replace('/home')
-        this.$router.go('/home')
+        this.$router.replace('/')
+        this.$router.go('/')
       }
       this.fullpath = this.$route.path +  this.$route.hash
       this.reload += 1
