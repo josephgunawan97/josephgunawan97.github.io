@@ -86,7 +86,7 @@
       email: 'JOSEPH.GUNAWAN8@GMAIL.COM',
       show: false,
       cssProps: {
-        'height': '95vh'
+        'min-height': '95vh'
       },
       cssCustomBox: {
         'background': `linear-gradient(75deg, #e7caa9 75px, transparent 20px) !important`,

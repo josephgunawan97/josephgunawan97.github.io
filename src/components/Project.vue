@@ -62,7 +62,7 @@
     data: () => ({
       show: false,
       cssProps: {
-        'height': '95vh'
+        'min-height': '95vh'
       },
       tabTitle: [
         'Klikdaily',
