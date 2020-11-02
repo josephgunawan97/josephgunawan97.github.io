@@ -4,46 +4,50 @@
       <div class="text-2 font-weight-bold primary white--text px-2 text-center rounded-lg" style="width: 300px; margin: auto  ">
         <p>PROJECT.</p>
       </div>
-      <v-card>
-        <v-tabs 
-          dark
-          background-color="secondary"
-          show-arrows
-          :vertical="$vuetify.breakpoint.mdAndUp">
-          <v-tabs-slider color="info"></v-tabs-slider>
-          <v-tab v-for="(item, index) in tabTitle" :key="index">
-            {{item}}
-          </v-tab>
+      <v-row>
+        <v-col>
+          <v-card>
+            <v-tabs 
+              dark
+              background-color="secondary"
+              show-arrows
+              :vertical="$vuetify.breakpoint.mdAndUp">
+              <v-tabs-slider color="info"></v-tabs-slider>
+              <v-tab v-for="(item, index) in tabTitle" :key="index">
+                {{item}}
+              </v-tab>
 
-          <v-tab-item v-for="(item, index) in tabContent" :key="index">
-            <v-card flat>
-              <v-card-text>
-                <v-row>
-                  <v-col 
-                    v-for="(image, imageIndex) in item.images" 
-                    :key="imageIndex" 
-                    :sm="12/item.images.length" 
-                    :md="12/item.images.length" 
-                    :lg="12/item.images.length"
-                    :xs="12/item.images.length"
-                    cols="12"
-                    >
-                    <v-img contain ratio="1" :src="image" max-height="400px"/>
-                  </v-col>
-                </v-row>
-                <v-divider class="my-2"/>
-                <p 
-                  class="primary--text font-weight-medium my-1"
-                  v-for="(description, descriptionIndex) in item.description" 
-                  :key="descriptionIndex" >
-                  {{description}}
-                </p>
+              <v-tab-item v-for="(item, index) in tabContent" :key="index">
+                <v-card flat>
+                  <v-card-text>
+                    <v-row>
+                      <v-col 
+                        v-for="(image, imageIndex) in item.images" 
+                        :key="imageIndex" 
+                        :sm="12/item.images.length" 
+                        :md="12/item.images.length" 
+                        :lg="12/item.images.length"
+                        :xs="12/item.images.length"
+                        cols="12"
+                        >
+                        <v-img contain ratio="1" :src="image" max-height="400px"/>
+                      </v-col>
+                    </v-row>
+                    <v-divider class="my-2"/>
+                    <p 
+                      class="primary--text font-weight-medium my-1"
+                      v-for="(description, descriptionIndex) in item.description" 
+                      :key="descriptionIndex" >
+                      {{description}}
+                    </p>
 
-              </v-card-text>
-            </v-card>
-          </v-tab-item>
-        </v-tabs>
-      </v-card>
+                  </v-card-text>
+                </v-card>
+              </v-tab-item>
+            </v-tabs>
+          </v-card>
+        </v-col>
+      </v-row>
       <v-btn x-large outlined color="primary" class="mt-4" @click="clickHandle('about')">
         Back To About 
       </v-btn>
