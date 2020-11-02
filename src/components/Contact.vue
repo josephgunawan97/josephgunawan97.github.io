@@ -62,6 +62,20 @@
               </div>
             </v-col>
           </v-row>
+          <v-row>
+            <v-col cols="12" lg="6" md="12" sm="12" xl="6" class="pr-3">
+              <div style="height: 55px"  @click="openGithub" :style="cssCustomBox" class=" rounded-tl-xl rounded-br-xl info">
+                <v-row>
+                  <v-col cols="3" lg="3" md="3" sm="3" xl="3" class="pa-3">
+                    <v-img :src="require('@/assets/social/Github.png')" class="ml-5" contain max-width="30px" max-height="30px" ratio="1"/>
+                  </v-col>
+                  <v-col cols="9" lg="9" md="9" sm="9" xl="9" class="pr-3">
+                    <span class="font-weight-medium text-1 primary--text">{{github}}</span>
+                  </v-col>
+                </v-row>
+              </div>
+            </v-col>
+          </v-row>
         </v-col>
         <v-col class="hidden-md-and-down" cols="12" lg="4" md="12" sm="12" xl="4">
           <v-img :src="require('@/assets/social/Contact.png')"/>
@@ -84,6 +98,7 @@
       instagram: '@JOSEPH_GUNAWANN',
       whatsapp: '+6281362405715',
       email: 'JOSEPH.GUNAWAN8@GMAIL.COM',
+      github: 'JOSEPHGUNAWAN97',
       show: false,
       cssProps: {
         'min-height': '95vh'
@@ -112,6 +127,9 @@
       },
       openWhatsapp () {
         window.open('https://wa.me/6281362405715','_blank')
+      },
+      openGithub () {
+        window.open('https://github.com/josephgunawan97','_blank')
       }
     }
   }
