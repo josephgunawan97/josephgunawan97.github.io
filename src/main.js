@@ -24,8 +24,8 @@ new Vue({
           { property: 'og:type', content: 'website' },    
           { property: 'og:url', content: 'https://josephgunawan97.github.io' },
           { name: 'robots', content: 'index,follow' },
-          { name: 'google-site-verification', content: 'Zmi3pVIs4GBVQ-lJMT_WMscbv66bGT-9r4WYwHhIylI'}
-          
+          // { name: 'google-site-verification', content: 'Zmi3pVIs4GBVQ-lJMT_WMscbv66bGT-9r4WYwHhIylI'}
+          { name:"google-site-verification", content:"qqJ9SF7P0RDiSEzsS99ajb8L9hRplRrxT95sIB_jLdA" }
         ]
     }
 }
