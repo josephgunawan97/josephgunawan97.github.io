@@ -105,13 +105,25 @@ export default {
         // this.dark = true;
         this.fixed = true;
         this.absolute = false;
+        this.menuOption = [
+          { text: 'Home', id: '/' }
+        ]
       } else {
         this.bg = 'transparent';
         this.elevate = 0;
         // this.dark = false;
         this.fixed = false;
         this.absolute = true;
+        this.menuOption = [
+          { text: 'Home', id: '/' },
+          { text: 'About', id: '/#about' },
+          { text: 'Career', id: '/#career' },
+          { text: 'Project', id: '/#project' },
+          { text: 'Organization', id: '/#organization' },
+          { text: 'Contact', id: '/#contact' },
+        ]
       }
+      this.reload += 1
     },
   },
 }

@@ -3,6 +3,8 @@
     <welcome ref="welcome" class="fl-welcome" @on-click="scrollMeTo"/>
     <about ref="about" id="about" class="fl-about" @on-click="scrollMeTo"/>
     <career ref="career" id="career" class="fl-career" @on-click="scrollMeTo"/>
+    <project ref="project" id="project" class="fl-project" @on-click="scrollMeTo"/>
+    <organization ref="organization" id="organization" class="fl-organization" @on-click="scrollMeTo"/>
     <contact ref="contact" id="contact" class="fl-contact" @on-click="scrollMeTo"/>
   </div>
 </template>
@@ -13,6 +15,8 @@ import Welcome from '@/components/Welcome.vue'
 import About from '@/components/About.vue'
 import Career from '@/components/Career.vue'
 import Contact from '@/components/Contact.vue'
+import Project from '@/components/Project.vue'
+import Organization from '@/components/Organization.vue'
 
 export default {
   name: 'Home',
@@ -21,6 +25,8 @@ export default {
     About,
     Career,
     Contact,
+    Project,
+    Organization
   },
   data () {
     return {

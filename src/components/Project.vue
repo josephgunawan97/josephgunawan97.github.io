@@ -1,48 +1,51 @@
 <template>
   <div :style="cssProps" class="background">
-    <v-container class="about pa-10">
-      <div class="text-2 font-weight-bold secondary white--text px-2 text-center rounded-lg" style="width: 300px; margin: auto  ">
-        <p>ABOUT ME.</p>
+    <v-container fill-height class="about pa-10">
+      <div class="text-2 font-weight-bold primary white--text px-2 text-center rounded-lg" style="width: 300px; margin: auto  ">
+        <p>PROJECT.</p>
       </div>
-      <v-row>
-        <v-col cols="12" lg="6" md="12" sm="12" xl="6" class="pr-3">
-          <div class="border container-image  primary pa-5 rounded-lg" @click="clickHandle('career')">
-            <v-img :src="require('@/assets/work.png')" max-height="250" contain class="image-custom"/>
-            <div class="overlay secondary rounded-lg">
-              <div class="text white--text">My Career</div>
-            </div>
-          </div>
-          <!-- <v-btn x-large style="height: 250px" block color="primary">
-            Work Experience
-          </v-btn> -->
-        </v-col>
-        <v-col cols="12" lg="6" md="12" sm="12" xl="6"  class="pr-3">
-          <div class="border container-image primary pa-5 rounded-lg"  @click="clickHandle('project')">
-            <v-img :src="require('@/assets/project.png')" max-height="250" contain class="image-custom"/>
-            <div class="overlay secondary rounded-lg">
-              <div class="text white--text">Project by Me</div>
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" lg="6" md="12" sm="12" xl="6"  class="pr-3">
-          <div class="border container-image primary pa-5 rounded-lg"  @click="clickHandle('organization')">
-            <v-img :src="require('@/assets/organization.png')" max-height="250" contain class="image-custom"/>
-            <div class="overlay secondary rounded-lg">
-              <div class="text white--text">My Organization</div>
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" lg="6" md="12" sm="12" xl="6" class="pr-3">
-          <div class="border container-image primary pa-5 rounded-lg"  @click="clickHandle('contact')">
-            <v-img :src="require('@/assets/contact.png')" max-height="250" contain class="image-custom"/>
-            <div class="overlay secondary rounded-lg">
-              <div class="text white--text">Contact Me</div>
-            </div>
-          </div>
-        </v-col>
-      </v-row>
-      <v-btn outlined color="primary" @click="clickHandle('welcome')">
-        Back To Home
+      <v-card>
+        <v-tabs 
+          dark
+          background-color="secondary"
+          show-arrows
+          :vertical="$vuetify.breakpoint.mdAndUp">
+          <v-tabs-slider color="info"></v-tabs-slider>
+          <v-tab v-for="(item, index) in tabTitle" :key="index">
+            {{item}}
+          </v-tab>
+
+          <v-tab-item v-for="(item, index) in tabContent" :key="index">
+            <v-card flat>
+              <v-card-text>
+                <v-row>
+                  <v-col 
+                    v-for="(image, imageIndex) in item.images" 
+                    :key="imageIndex" 
+                    :sm="12/item.images.length" 
+                    :md="12/item.images.length" 
+                    :lg="12/item.images.length"
+                    :xs="12/item.images.length"
+                    cols="12"
+                    >
+                    <v-img contain ratio="1" :src="image" max-height="400px"/>
+                  </v-col>
+                </v-row>
+                <v-divider class="my-2"/>
+                <p 
+                  class="primary--text font-weight-medium my-1"
+                  v-for="(description, descriptionIndex) in item.description" 
+                  :key="descriptionIndex" >
+                  {{description}}
+                </p>
+
+              </v-card-text>
+            </v-card>
+          </v-tab-item>
+        </v-tabs>
+      </v-card>
+      <v-btn x-large outlined color="primary" class="mt-4" @click="clickHandle('about')">
+        Back To About 
       </v-btn>
     </v-container>
   </div>
@@ -50,13 +53,56 @@
 
 <script>
   export default {
-    name: 'HelloWorld',
+    name: 'Project',
 
     data: () => ({
       show: false,
       cssProps: {
         'height': '95vh'
-      }
+      },
+      tabTitle: [
+        'Klikdaily',
+        'Rudolve',
+        `Sit'nShop`
+      ],
+      tabContent: [
+        {
+          images: [
+            require('@/assets/project/kd2.png'),
+            require('@/assets/project/kd1.png'),
+          ],
+          description: [
+            'Working on Marketing Tools for User Engagement and Main Operational System.',
+            'This tools consists of several sub-tools such as Voucher, Push Notification, Banner and Campaign System.',
+            'Each tool able to perform dynamically to adjust user location, platform and categorize to more personalize.',         
+            'Operational System includes Order System via website and application, Warehousing System and Inventory System.'          
+          ]
+        },
+        {
+          images: [
+            require('@/assets/project/r2.png'),
+            require('@/assets/project/r1.png'),
+          ],
+          description: [
+            'Transportation Management System Solution',
+            'A system used to manage Delivery Plan where user able to quickly plan drop point sequence by automation, calculate and optimize fleet capacity.',
+            'Each fleet has a driver application where each individual able to update their shipping, navigate their next drop point and location tracking.',
+
+          ]
+        },
+        {
+          images: [
+            require('@/assets/project/s1.png'),
+            require('@/assets/project/s2.png'),
+          ],
+          description: [
+            'Online Canteen for university',
+            'An application to help people in university to order foods and beverage via mobile application.',
+            'Every stores able to register themselves, set their store info and product to promote their business.',
+            'The product is able to delivered by other users who get the opportunity with some payment beneficial.',
+          ]
+        },
+      ]
     }),
     mounted() {
       this.show = true

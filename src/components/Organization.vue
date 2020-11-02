@@ -1,48 +1,41 @@
 <template>
   <div :style="cssProps" class="background">
-    <v-container class="about pa-10">
-      <div class="text-2 font-weight-bold secondary white--text px-2 text-center rounded-lg" style="width: 300px; margin: auto  ">
-        <p>ABOUT ME.</p>
+    <v-container fill-height class="about pa-10">
+      <div class="text-2 font-weight-bold accent--text px-2 text-right rounded-lg">
+        <p>ORGANIZATION</p>
       </div>
       <v-row>
-        <v-col cols="12" lg="6" md="12" sm="12" xl="6" class="pr-3">
-          <div class="border container-image  primary pa-5 rounded-lg" @click="clickHandle('career')">
-            <v-img :src="require('@/assets/work.png')" max-height="250" contain class="image-custom"/>
-            <div class="overlay secondary rounded-lg">
-              <div class="text white--text">My Career</div>
-            </div>
-          </div>
-          <!-- <v-btn x-large style="height: 250px" block color="primary">
-            Work Experience
-          </v-btn> -->
-        </v-col>
-        <v-col cols="12" lg="6" md="12" sm="12" xl="6"  class="pr-3">
-          <div class="border container-image primary pa-5 rounded-lg"  @click="clickHandle('project')">
-            <v-img :src="require('@/assets/project.png')" max-height="250" contain class="image-custom"/>
-            <div class="overlay secondary rounded-lg">
-              <div class="text white--text">Project by Me</div>
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" lg="6" md="12" sm="12" xl="6"  class="pr-3">
-          <div class="border container-image primary pa-5 rounded-lg"  @click="clickHandle('organization')">
-            <v-img :src="require('@/assets/organization.png')" max-height="250" contain class="image-custom"/>
-            <div class="overlay secondary rounded-lg">
-              <div class="text white--text">My Organization</div>
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" lg="6" md="12" sm="12" xl="6" class="pr-3">
-          <div class="border container-image primary pa-5 rounded-lg"  @click="clickHandle('contact')">
-            <v-img :src="require('@/assets/contact.png')" max-height="250" contain class="image-custom"/>
-            <div class="overlay secondary rounded-lg">
-              <div class="text white--text">Contact Me</div>
-            </div>
-          </div>
+        <v-col
+          v-for="(item, index) in content" :key="index"
+          sm="12" 
+          md="12" 
+          :lg="12/content.length"
+          :xs="12/content.length"
+          cols="12">
+          <v-card>
+            <v-card-title class="primary--text">
+              <span>{{item.title}}</span><br/>
+            </v-card-title>
+            <v-card-subtitle>
+              <span>{{item.position}}</span>
+            </v-card-subtitle>
+            <v-card-text >
+              <v-img contain ratio="1" class="pt-5" :src="item.images" max-height="250px"/>
+            </v-card-text>
+
+            <v-card-text class="accent">
+              <p 
+                class="white--text font-weight-medium my-1"
+                v-for="(description, descriptionIndex) in item.description" 
+                :key="descriptionIndex" >
+                - {{description}}
+              </p>
+            </v-card-text>
+          </v-card>
         </v-col>
       </v-row>
-      <v-btn outlined color="primary" @click="clickHandle('welcome')">
-        Back To Home
+      <v-btn x-large outlined color="primary" class="mt-4" @click="clickHandle('about')">
+        Back To About 
       </v-btn>
     </v-container>
   </div>
@@ -50,13 +43,49 @@
 
 <script>
   export default {
-    name: 'HelloWorld',
+    name: 'Organization',
 
     data: () => ({
       show: false,
       cssProps: {
-        'height': '95vh'
-      }
+        'min-height': '95vh',
+        'background-image': `url(${require('@/assets/bg1.jpg')})`,
+        'background-size': `100%`,
+        'background-position': `center`,
+        'background-repeat': `repeat-y`
+      },
+      content: [
+        {
+          images: require('@/assets/organization/mpm.png'),
+          title: 'Students Representative Board',
+          position: 'Vice Chairman of External Affairs',
+          description: [
+            'As Vice of External Affairs, I actively manage relation between organizations in Universitas Pelita Harapan such relation between Representative Boards, Executive Boards, Students Association, Student Activities, Students Service, etc.',
+            'Manage and supervise any events held by Students Representative Boards.',
+            'Supervise any Student Executive Boards activity and guide them to perform and create better events.'          
+          ]
+        },
+        {
+          images: require('@/assets/organization/hmptif.jpg'),
+          title: 'Association of Informatics Students',
+          position: 'Media Information and Communication',
+          description: [
+            'In charge of managing and creating content of specific information for Informatics students through both public media and media social.',
+            'As part of Student Association, I actively contribute and participate in various events held by the organization.',
+          ]
+        },
+        {
+          images: require('@/assets/organization/pixagraphica.png'),
+          title: 'Pixagraphica',
+          position: 'Vice Head / Co-Founder',
+          description: [
+            'Improve SMAK BPK Penabur multimedia group performance through creating group consist of members with skills in multimedia.',
+            'Serve and teach high school students in Design, Comunication and Visual class.',
+            'Hired as events multimedia'
+          ]
+        },
+      ]
+      
     }),
     mounted() {
       this.show = true
