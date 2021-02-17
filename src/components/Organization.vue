@@ -1,6 +1,6 @@
 <template>
   <div :style="cssProps" class="background">
-    <v-container fill-height class="about pa-10">
+    <v-container fill-height class="about py-10 px-4">
       <div class="text-2 font-weight-bold accent--text px-2 text-right rounded-lg">
         <p>ORGANIZATION</p>
       </div>
