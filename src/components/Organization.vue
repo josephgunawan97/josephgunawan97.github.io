@@ -60,7 +60,7 @@
           title: 'Students Representative Board',
           position: 'Vice Chairman of External Affairs',
           description: [
-            'As Vice of External Affairs, I actively manage relation between organizations in Universitas Pelita Harapan such relation between Representative Boards, Executive Boards, Students Association, Student Activities, Students Service, etc.',
+            'Actively manage relation between organizations in University',
             'Manage and supervise any events held by Students Representative Boards.',
             'Supervise any Student Executive Boards activity and guide them to perform and create better events.'          
           ]
@@ -72,6 +72,7 @@
           description: [
             'In charge of managing and creating content of specific information for Informatics students through both public media and media social.',
             'As part of Student Association, I actively contribute and participate in various events held by the organization.',
+            'Participate on competition as represntative'
           ]
         },
         {
