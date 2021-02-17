@@ -7,7 +7,7 @@
       <v-row no-gutters>
         <v-col cols="12" lg="8" md="12" sm="12" xl="8">
           <v-row>
-            <v-col cols="12" lg="6" md="12" sm="12" xl="6" class="pr-3">
+            <v-col cols="12" lg="8" md="12" sm="12" xl="8" class="pr-3">
               <div style="height: 55px" @click="openEmail" :style="cssCustomBox" class=" rounded-tl-xl rounded-br-xl info">
                 <v-row>
                   <v-col cols="3" lg="3" md="3" sm="3" xl="3" class="pa-3">
@@ -21,7 +21,7 @@
             </v-col>
           </v-row>
           <v-row>
-            <v-col cols="12" lg="6" md="12" sm="12" xl="6" class="pr-3">
+            <v-col cols="12" lg="8" md="12" sm="12" xl="8" class="pr-3">
               <div style="height: 55px" @click="openFacebook" :style="cssCustomBox" class=" rounded-tl-xl rounded-br-xl info">
                 <v-row>
                   <v-col cols="3" lg="3" md="3" sm="3" xl="3" class="pa-3">
@@ -35,7 +35,7 @@
             </v-col>
           </v-row>
           <v-row>
-            <v-col cols="12" lg="6" md="12" sm="12" xl="6" class="pr-3">
+            <v-col cols="12" lg="8" md="12" sm="12" xl="8" class="pr-3">
               <div style="height: 55px"  @click="openInstagram" :style="cssCustomBox" class=" rounded-tl-xl rounded-br-xl info">
                 <v-row>
                   <v-col cols="3" lg="3" md="3" sm="3" xl="3" class="pa-3">
@@ -49,7 +49,7 @@
             </v-col>
           </v-row>
           <v-row>
-            <v-col cols="12" lg="6" md="12" sm="12" xl="6" class="pr-3">
+            <v-col cols="12" lg="8" md="12" sm="12" xl="8" class="pr-3">
               <div style="height: 55px"  @click="openWhatsapp" :style="cssCustomBox" class=" rounded-tl-xl rounded-br-xl info">
                 <v-row>
                   <v-col cols="3" lg="3" md="3" sm="3" xl="3" class="pa-3">
@@ -63,7 +63,7 @@
             </v-col>
           </v-row>
           <v-row>
-            <v-col cols="12" lg="6" md="12" sm="12" xl="6" class="pr-3">
+            <v-col cols="12" lg="8" md="12" sm="12" xl="8" class="pr-3">
               <div style="height: 55px"  @click="openGithub" :style="cssCustomBox" class=" rounded-tl-xl rounded-br-xl info">
                 <v-row>
                   <v-col cols="3" lg="3" md="3" sm="3" xl="3" class="pa-3">

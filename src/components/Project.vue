@@ -106,6 +106,18 @@
             'The product is able to delivered by other users who get the opportunity with some payment beneficial.',
           ]
         },
+        {
+          images: [
+            require('@/assets/project/yb1.png'),
+            require('@/assets/project/yb2.png'),
+          ],
+          description: [
+            'Yo Booster - yo-booster-indonesia.webflow.io',
+            'Company profile about healthy foods',
+            'Created using CMS Webflow with custom feature for easy usage.',
+            'The proejct consists of managing website from sracth until deployed on hosting',
+          ]
+        },
       ]
     }),
     mounted() {
