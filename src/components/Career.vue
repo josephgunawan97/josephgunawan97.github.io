@@ -89,19 +89,24 @@
       items: [
         {
           title: 'KLIKDAILY',
-          job: ['Product Manager', 'Developer'],
-          time: ['July 2019 - Now', 'Aug 2018 – Jun 2019'],
+          job: ['Senior Product Manager','Product Manager', 'Developer'],
+          time: [ 'Nov 2020 - Now','July 2019 - Nov 2020', 'Aug 2018 – Jun 2019'],
           task: [
             [
-              'Manage multiple applications (Mobile and Internal System)',
-              'Review and monitoring every feature and looking for new improvement',
-              'Working on requirement documentation, wireframe and timeline planning of each product that will be developed by discussing with stakeholders',
-              'Experience in Agile Development and Scrum methodology with tools such as Jira and Confluence',
-              'Experience in gathering, analyzing, and reporting data using BigQuery and Datastudio',
+              'Manage and improve internal tools (Supply Chain Management System, Marketing tools) and customer application (Mitra Klikdaily, KD Sales)',
+              'Conduct solution both for operational and end-customer in Fast Moving Consumption Goods and retail industry through inputs and discussions with customers and other stakeholders.',
+              'Digitalize over 50 conventional retail and small stores by providing a modern store system in Java and Bali.',
+              'Improve Marketing team for engagement and promotion productivity and efficiency with seamless and more functionality system.',
+              'Decrease User connection problem by 80% through user login and stability improvement',
             ],
             [
-              'Perform as a full-stack developer for in-house software',
-              'Working with Vue.js and Firebase NoSQL'
+              'Migrate 60% of total registered user from offline to online within 2 months by improving Mitra Klikdaily promotion system.',
+              'Delivered a Marketing System to increase engagement by 70% under 3 months through application integration.',
+              'Developed Payment Point Online Bank product including the digital payment system (Mobile Banking and E-Wallet).'
+            ],
+            [
+              'Developed Klikdaily Databoard as company Supply Chain Management System to support online orders from application using Vue.js, Node.js and Google Cloud as the core framework.',
+              'Created a data integration with Google Datastudio and Big Query for reporting and analytic.'
             ]
           ],
           image: require('@/assets/klikdaily.jpg'),
